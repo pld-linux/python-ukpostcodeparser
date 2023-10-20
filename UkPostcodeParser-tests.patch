@@ -1,0 +1,59 @@
+Update tests for new central London outing codes added in 9f7563d.
+Remove duplicates.
+--- UkPostcodeParser-1.1.2/ukpostcodeparser/test/parser.py.orig	2017-07-04 01:13:59.000000000 +0200
++++ UkPostcodeParser-1.1.2/ukpostcodeparser/test/parser.py	2023-10-20 16:51:43.328113015 +0200
+@@ -801,7 +801,7 @@ class PostcodeTestCase(unittest.TestCase
+             postcode='w1m 4zz',
+             strict=True,
+             incode_mandatory=False,
+-            expected=InvalidPostcodeError
++            expected=('W1M','4ZZ')
+         )
+ 
+     def test_092(self):
+@@ -844,20 +844,12 @@ class PostcodeTestCase(unittest.TestCase
+             expected=('GIR', '')
+         )
+ 
+-    def test_097(self):
+-        self.run_parser(
+-            postcode='w1m 4zz',
+-            strict=True,
+-            incode_mandatory=False,
+-            expected=InvalidPostcodeError
+-        )
+-
+     def test_098(self):
+         self.run_parser(
+             postcode='w1m',
+             strict=True,
+             incode_mandatory=False,
+-            expected=InvalidPostcodeError
++            expected=('W1M', '')
+         )
+ 
+     def test_099(self):
+@@ -1073,7 +1065,7 @@ class PostcodeTestCase(unittest.TestCase
+             postcode='w1m 4zz',
+             strict=True,
+             incode_mandatory=True,
+-            expected=InvalidPostcodeError
++            expected=('W1M', '4ZZ')
+         )
+ 
+     def test_126(self):
+@@ -1116,14 +1108,6 @@ class PostcodeTestCase(unittest.TestCase
+             expected=IncodeNotFoundError
+         )
+ 
+-    def test_131(self):
+-        self.run_parser(
+-            postcode='w1m 4zz',
+-            strict=True,
+-            incode_mandatory=True,
+-            expected=InvalidPostcodeError
+-        )
+-
+     def test_132(self):
+         self.run_parser(
+             postcode='w1m',
