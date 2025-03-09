@@ -50,7 +50,7 @@ Analizator kodów pocztowych Wielkiej Brytanii.
 
 %prep
 %setup -q -n UkPostcodeParser-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 %if %{with python2}
