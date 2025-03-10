@@ -8,7 +8,7 @@ Summary:	UK Postcode parser
 Summary(pl.UTF-8):	Analizator kodów pocztowych Wielkiej Brytanii
 Name:		python-ukpostcodeparser
 Version:	1.1.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/UkPostcodeParser/
