@@ -15,6 +15,7 @@ Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/U/UkPostcodeParser/UkPostcodeParser-%{version}.tar.gz
 # Source0-md5:	763ed9144915f9647fa5bded2f03ae75
 Patch0:		UkPostcodeParser-tests.patch
+Patch1:		UkPostcodeParser-unittest.patch
 URL:		https://pypi.org/project/UkPostcodeParser/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.5
@@ -51,6 +52,7 @@ Analizator kodów pocztowych Wielkiej Brytanii.
 %prep
 %setup -q -n UkPostcodeParser-%{version}
 %patch -P 0 -p1
+%patch -P 1 -p1
 
 %build
 %if %{with python2}
